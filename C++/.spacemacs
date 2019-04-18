@@ -36,6 +36,7 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     java
      helm
      auto-completion
      ;; better-defaults
@@ -314,12 +315,18 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;;C++
   ;; Bind clang-format-region to C-M-tab in all modes:
   (global-set-key [C-M-tab] 'clang-format-region)
   ;; Bind clang-format-buffer to tab on the c++-mode only:
   (add-hook 'c++-mode-hook 'clang-format-bindings)
   (defun clang-format-bindings ()
     (define-key c++-mode-map [tab] 'clang-format-buffer))
+  ;;java
+  (setq eclim-eclipse-dirs '("/home/sk/eclipse/jee-2019-03/eclipse")
+        eclim-executable "/home/sk/.p2/pool/plugins/org.eclim_2.8.0/bin/eclim"
+        eclimd-default-workspace "/home/sk/eclipse-workspace")
+
   (setq-default spacemacs-show-trailing-whitespace nil)
   (setq locale-coding-system 'utf-8)
   (set-terminal-coding-system 'utf-8-unix)
@@ -340,7 +347,7 @@ you should place your code here."
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (mmm-mode markdown-toc markdown-mode gh-md vimrc-mode dactyl-mode pyenv-mode hy-mode company-anaconda anaconda-mode yapfify pyvenv pytest py-isort pip-requirements live-py-mode dash-functional helm-pydoc cython-mode pythonic helm-cscope xcscope stickyfunc-enhance srefactor disaster company-c-headers cmake-mode clang-format flycheck-pos-tip pos-tip flycheck xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help helm-company helm-c-yasnippet fuzzy company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+    (company-emacs-eclim eclim mmm-mode markdown-toc markdown-mode gh-md vimrc-mode dactyl-mode pyenv-mode hy-mode company-anaconda anaconda-mode yapfify pyvenv pytest py-isort pip-requirements live-py-mode dash-functional helm-pydoc cython-mode pythonic helm-cscope xcscope stickyfunc-enhance srefactor disaster company-c-headers cmake-mode clang-format flycheck-pos-tip pos-tip flycheck xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help helm-company helm-c-yasnippet fuzzy company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
