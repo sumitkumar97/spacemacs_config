@@ -36,6 +36,10 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     (python :variables
+             python-test-runner 'pytest
+             python-enable-yapf-format-on-save t
+             python-sort-imports-on-save t)
      java
      helm
      auto-completion
@@ -306,6 +310,13 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setq-default
+   dotspacemacs-configuration-layers
+                '(
+                  (python :variables
+                          python-fill-column 99)
+                  )
+                )
   )
 
 (defun dotspacemacs/user-config ()
