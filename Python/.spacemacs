@@ -37,7 +37,10 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      (python :variables
+             python-backend 'anaconda
              python-test-runner 'pytest
+             python-formatter 'yapf
+             python-format-on-save t
              python-enable-yapf-format-on-save t
              python-sort-imports-on-save t)
      osx
